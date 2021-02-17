@@ -32,9 +32,9 @@ export default function Details(props) {
   // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
 
   useEffect(() => {
-    console.log(`🥵 EFFECT after every DOM surgery`);
+    // console.log(`🥵 EFFECT after every DOM surgery`);
     return () => {
-      console.log(`🥵 CLEANUP of the previous effect`);
+      // console.log(`🥵 CLEANUP of the previous effect`);
     };
   });
 
