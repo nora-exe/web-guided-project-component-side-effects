@@ -47,6 +47,7 @@ export default function Details(props) {
     // this runs after the first render for sure, and then after every render + DOM surgery
     // caused by a change in the friendID
     console.log(`📲 fetching the friend with the id ${friendId}`);
+
     axios
       .get(`${BASE_URL}/friends/${friendId}?api_key=${API_KEY}`)
       .then((res) => {
@@ -55,6 +56,10 @@ export default function Details(props) {
       .catch((err) => {
         console.log(err);
       });
+
+    return () => {
+      console.log(`📲 old friendId was ${friendId}. This is cleanup`);
+    };
   }, [friendId]);
 
   return (
