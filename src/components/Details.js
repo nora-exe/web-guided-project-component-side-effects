@@ -43,6 +43,13 @@ export default function Details(props) {
   // The URL should end up looking like `http://localhost:4000/friends/1?api_key=xyz`
   // On success, shove the details of the friend in `details` slice of state
 
+  useEffect(() => {
+    // this runs after the first render for sure, and then after every render + DOM surgery
+    // caused by a change in the friendID
+    console.log(`📲 fetching the friend with the id ${friendId}`);
+    axios.get(`${BASE_URL}/friends/${friendID}?api_key=${API_KEY}`);
+  }, [friendId]);
+
   return (
     <div className="container">
       <h2>Details (of friend with id {friendId}):</h2>
