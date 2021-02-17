@@ -4,6 +4,8 @@ import axios from "axios";
 
 // 👉 TASK 2 - import the contants from constants/index.js
 
+import { BASE_URL, API_KEY } from "../constants";
+
 import Details from "./Details";
 
 export default function App() {
