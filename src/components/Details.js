@@ -23,6 +23,10 @@ export default function Details(props) {
       console.log(`Here is a random number: ${Math.random()}`);
     };
     document.addEventListener("click", sillyClickListener);
+    return () => {
+      console.log(`👻 CLEANING UP SILLY CLICK LISTENER`);
+      document.removeEventListener("click", sillyClickListener);
+    };
   }, []);
 
   // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
