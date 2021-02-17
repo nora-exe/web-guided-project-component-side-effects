@@ -20,7 +20,7 @@ export default function Details(props) {
 
   useEffect(() => {
     const sillyClickListener = (evt) => {
-      console.log(`Here is a random number: ${Math.random()}`);
+      // console.log(`Here is a random number: ${Math.random()}`);
     };
     document.addEventListener("click", sillyClickListener);
     return () => {
@@ -30,6 +30,13 @@ export default function Details(props) {
   }, []);
 
   // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
+
+  useEffect(() => {
+    console.log(`🥵 EFFECT after every DOM surgery`);
+    return () => {
+      console.log(`🥵 CLEANUP of the previous effect`);
+    };
+  });
 
   // 👉 TASK 7 - Create a side effect 📲 that runs when a particular variable changes:
   // Whenever props.friendId updates we should trigger a fetch for details of the friend.
